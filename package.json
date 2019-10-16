@@ -1,0 +1,59 @@
+{
+  "name": "apiko-fall-courses-api",
+  "version": "0.1.0",
+  "description": "API for Apiko fall courses 2019",
+  "main": "build/main.js",
+  "scripts": {
+    "start": "node build/main.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "node_modules/.bin/babel src -d ./build",
+    "build": "npm run clean && npm run build-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development node index.js",
+    "db:update": "sh ./scripts/db_update.sh",
+    "migrate:update": "cd migrations/schema && ./liquibase.groovy update",
+    "migrate:rollback:all": "cd migrations/schema && ./liquibase.groovy rollbackCount 9000",
+    "migrate:rollback": "cd migrations/schema && ./liquibase.groovy rollback rollbackCount 1"
+  },
+  "keywords": [
+    "apiko",
+    "courses"
+  ],
+  "author": "Apiko",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "ajv": "^6.10.2",
+    "bcrypt": "^3.0.6",
+    "cloudinary": "^1.15.0",
+    "dotenv": "^8.1.0",
+    "fast-json-stringify": "^1.15.5",
+    "fastify": "^2.9.0",
+    "fastify-jwt": "^1.1.0",
+    "fastify-multipart": "^1.0.0",
+    "fastify-oas": "^2.3.3",
+    "lodash": "^4.17.11",
+    "pg": "^7.12.1",
+    "pump": "^3.0.0",
+    "socket.io": "^2.3.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-formatter-pretty": "^2.1.1",
+    "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
+  }
+}
