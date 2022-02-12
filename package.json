@@ -23,7 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "bcrypt": "^3.0.6",
     "cloudinary": "^1.15.0",
     "dotenv": "^8.1.0",
